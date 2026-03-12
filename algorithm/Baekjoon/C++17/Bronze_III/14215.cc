@@ -11,10 +11,10 @@ int main() {
     cin >> a >> b >> c;
     
     // No need to sort
-    int sum = a + b + c;
     int maximum = max({a, b, c});
+    int sum = a + b + c;
     
-    if (sum - maximum > maximum) {
+    if (maximum < sum - maximum) {
         cout << sum << '\n';
     }
     else {
