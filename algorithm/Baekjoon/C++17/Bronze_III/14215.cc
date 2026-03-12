@@ -1,5 +1,4 @@
 #include<iostream>
-#include<vector>
 #include<algorithm>
 
 using namespace std;
@@ -11,15 +10,15 @@ int main() {
     int a, b, c;
     cin >> a >> b >> c;
     
-    vector<int> edge(3);
-    edge[0] = a, edge[1] = b, edge[2] = c;
-    sort(edge.begin(), edge.end());
+    // No need to sort
+    int sum = a + b + c;
+    int maximum = max({a, b, c});
     
-    if (edge[2] < edge[0] + edge[1]) {
-        cout << edge[0] + edge[1] + edge[2] << '\n';
+    if (sum - maximum > maximum) {
+        cout << sum << '\n';
     }
     else {
-        cout << 2 * (edge[0] + edge[1]) - 1 << '\n';
+        cout << 2 * (sum - maximum) - 1 << '\n';
     }
     
     return 0;
